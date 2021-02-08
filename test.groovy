@@ -8,8 +8,12 @@ def url = 'jdbc:postgresql://localhost:5432/dflt_db'
 def user = 'John'
 def password = 'Doe'
 def driver = 'org.postgresql.Driver'
-def sql = Sql.newInstance(url, user, password, driver)
 
-assert sql.firstRow("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename='spatial_ref_sys'")
+println "Check Sql instance"
+def sql = Sql.newInstance(url, user, password, driver)
+assert !sql
+
+println "Check 'spatial_ref_sys' table"
+assert !sql.firstRow("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename='spatial_ref_sys'")
 
 sql.close()
