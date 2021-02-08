@@ -1,0 +1,28 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install SDKMan
+        run: |
+          curl -s "https://get.sdkman.io" | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          
+      - name: Install OpenJDK
+        run: sdk install java 11.0.10-open
+          
+      - name: Install OpenJDK
+        run: sdk install groovy 3.0.7
+        
+      - name: Execute Groovy test
+        run: groovy test.groovy
