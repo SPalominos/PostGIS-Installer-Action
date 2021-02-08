@@ -15,6 +15,10 @@ inputs:
     description: 'Name of the default database.'
     required: false
     default: 'dflt_db'
+  docker_image:
+    description: 'Docker image.'
+    required: false
+    default: 'postgis/postgis'
   psql_version:
     description: 'Version of PostgreSQL'
     required: false
