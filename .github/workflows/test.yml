@@ -13,12 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install SDKMan
+      - name: Setup SDKs and run test
         run: |
           curl -s "https://get.sdkman.io" | bash
           source "$HOME/.sdkman/bin/sdkman-init.sh"
           sdk install java 11.0.10-open
           sdk install groovy 3.0.7
-        
-      - name: Execute Groovy test
-        run: groovy test.groovy
+          groovy test.groovy
