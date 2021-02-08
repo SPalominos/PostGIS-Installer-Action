@@ -14,6 +14,6 @@ def sql = Sql.newInstance(url, user, password, driver)
 assert sql
 
 println "Check 'spatial_ref_sys' table"
-assert !sql.firstRow("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename='spatial_ref_sys'")
+assert sql.firstRow("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename='spatial_ref_sys'")
 
 sql.close()
