@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2     
-      - uses: SPalominos/PostGIS-Installer-Action@v0.0.3
+      - uses: SPalominos/PostGIS-Installer-Action@HEAD
       - name: Setup SDKs and run test
         run: |
           curl -s "https://get.sdkman.io" | bash
