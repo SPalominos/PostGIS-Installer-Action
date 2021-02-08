@@ -1,0 +1,33 @@
+name: 'PostgreSQL/PostGIS installation'
+author: 'SPalominos'
+description: 'Install and setup a PostgreSQL/PostGIS database'
+  
+inputs:
+  db_user:
+    description: 'Name of the superuser to create.'
+    required: false
+    default: 'John'
+  db_password:
+    description: 'Created superuser password.'
+    required: false
+    default: 'Doe'
+  db_name:
+    description: 'Name of the default database.'
+    required: false
+    default: 'dflt_db'
+  psql_version:
+    description: 'Version of PostgreSQL'
+    required: false
+    default: '13'
+  pgis_version:
+    description: 'Version of PostGIS'
+    required: false
+    default: '3.1'
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'database'
+  color: 'purple'
