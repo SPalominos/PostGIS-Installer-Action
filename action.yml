@@ -26,7 +26,7 @@ inputs:
     
 runs:
   using: 'docker'
-  image: 'docker://debian:stretch-slim'
+  image: 'dockerfile'
 
 branding:
   icon: 'database'
