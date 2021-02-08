@@ -10,6 +10,6 @@ def password = 'Doe'
 def driver = 'org.postgresql.Driver'
 def sql = Sql.newInstance(url, user, password, driver)
 
-// use 'sql' instance ...
+assert sql.firstRow("SELECT tablename FROM pg_tables WHERE schemaname='public' AND tablename='spatial_ref_sys'")
 
 sql.close()
