@@ -14,9 +14,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install SDKMan
-        run: |
-          curl -s "https://get.sdkman.io" | bash
-          source "$HOME/.sdkman/bin/sdkman-init.sh"
+        run: curl -s "https://get.sdkman.io" | bash
+        
+      - name: Setup SDKMan
+        run: source "$HOME/.sdkman/bin/sdkman-init.sh"
           
       - name: Install OpenJDK
         run: sdk install java 11.0.10-open
